@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ProvaCandidato.Data.Entidade.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<input id="searchInput" class="form-control" placeholder="Type To Filter">
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="fbody">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Codigo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Codigo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Codigo })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

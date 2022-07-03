@@ -1,0 +1,72 @@
+﻿@model ProvaCandidato.Data.Entidade.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+    </dl>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            Observações
+        </th>
+      
+    </tr>
+    <tbody id="fbody">
+        @foreach (var item in Model.ClienteObservacoes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacao)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Codigo }) |
+    @Html.ActionLink("Back to List", "Index") |
+    <button class="AddObs btn-success">Adicionar Observação</button>
+    <div id="AddObs"></div>
+</p>
