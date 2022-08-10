@@ -1,4 +1,7 @@
-# ICI_MVC
+# Instituto das Cidades Inteligentes
+
+## Objetivo
+Projeto destinado apenas para avaliação de empresa.
 
 ## Setup 
 
